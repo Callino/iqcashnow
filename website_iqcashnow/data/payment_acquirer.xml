@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="payment_iqcashnow.journal_iq_cash_now" model="payment.acquirer">
+            <field name="view_template_id" ref="iqcn_form"/>
+        </record>
+
+    </data>
+</odoo>

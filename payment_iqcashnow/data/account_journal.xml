@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="journal_iq_cash_now" model="account.journal">
+            <field name="name">IQ Cashnow</field>
+            <field name="code">IQCN</field>
+            <field name="is_iqcn_journal" eval="True"/>
+            <field name="iqcn_payment_acquirer_id" ref="acquirer_iqcashnow"/>
+            <field name="type">bank</field>
+        </record>
+
+    </data>
+</odoo>

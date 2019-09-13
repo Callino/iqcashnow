@@ -1,0 +1,47 @@
+.button.highlight.iqcn-button {
+    float:none;
+    line-height: 14px !important;
+    width: 175px;
+    height: 40px;
+    text-align: center;
+    border-radius: 2px;
+    margin-top: 10px;
+    margin-right: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    border: solid 1px rgba(60,60,60,0.1);
+    background: rgba(0,0,0,0.05);
+}
+
+.iqcn-qr-modal {
+    text-align: -webkit-center;
+    margin: 0 auto;
+}
+
+.iqcn-qr-code-container {
+    width: 512px;
+    height:512px;
+    margin:auto;
+}
+.iqcn-qr-code-widget {
+    text-align: center;
+    background: #fff;
+    margin: auto;
+    position:relative;
+    transform: translate(0%, 25%);
+    width: 50%;
+    min-width:512px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.iqcn-qr-idle-widget {
+    text-align: center;
+    background: #fff;
+    margin: auto;
+    position:relative;
+    transform: translate(0%, 50%);
+    width: 400px;
+    height:300px;
+    padding-top:40px;
+}

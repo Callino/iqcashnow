@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Inherit Form View to Modify it -->
+        <record id="view_pos_pos_form" model="ir.ui.view">
+            <field name="name">view_pos_pos_form</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='statement_ids']/tree/field[@name='statement_id']" position="after">
+                    <field name="iqcn_payment_id"/>
+                    <field name="iqcn_status_id"/>
+                    <field name="iqcn_status_text"/>
+                    <field name="iqcn_payment_url"/>
+                </xpath>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>

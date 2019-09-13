@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="IQCN_IdleWidget">
+        <div class="pos modal-dialog popup" style="text-align: -webkit-center; margin: 0 auto;">
+            <div class="iqcn-qr-idle-widget">
+                <img src="../../pos_iq_cash_now/static/src/img/logo.png"/>
+                <h1>Initializing transaction.</h1>
+                <h2>Please wait, soon you will get the QRCode !</h2>
+                <i class="fa fa-spinner fa-spin" style="font-size:3em;"/>
+            </div>
+        </div>
+    </t>
+
+    <t t-name="IQCN_QRCodeWidget">
+        <div class="pos modal-dialog popup iqcn-qr-modal">
+            <div class="iqcn-qr-code-widget">
+                <img src="../../pos_iq_cash_now/static/src/img/logo.png"/>
+                <div class="iqcn-qr-code-container" id="qrcode">
+
+                </div>
+                <h2>Please scan this payment QRCode with your mobile payment app</h2>
+                <button id="iqcn_payment_successful" class="button highlight iqcn-button" style="display:none;">Zahlung erfolgreich</button>
+                <button id="iqcn_payment_abort" class="button highlight iqcn-button">Abort payment</button>
+                <button id="iqcn_payment_status" class="button highlight iqcn-button" style="display:none;">Statusabfrage</button>
+            </div>
+        </div>
+    </t>
+
+    <t t-extend="PaymentScreen-Paymentlines" >
+        <t t-jquery="t[t-foreach*='paymentlines'][t-as*='line']" t-operation="replace">
+            <t t-foreach='paymentlines' t-as='line'>
+                <t t-if="!line.cashregister.journal.is_iqcn_journal">
+                    <t t-if='line.selected'>
+                        <tr class='paymentline selected'>
+                            <td class='col-due'> <t t-esc='widget.format_currency_no_symbol(order.get_due(line))' /> </td>
+                            <td class='col-tendered edit'>
+                                <t t-esc='widget.inputbuffer' />
+                                <!-- <t t-esc='line.get_amount()' /> -->
+                            </td>
+                            <t t-if='order.get_change(line)'>
+                                <td class='col-change highlight' >
+                                    <t t-esc='widget.format_currency_no_symbol(order.get_change(line))' />
+                                </td>
+                            </t>
+                            <t t-if='!order.get_change(line)'>
+                                <td class='col-change' ></td>
+                            </t>
+
+                            <td class='col-name' > <t t-esc='line.name' /> </td>
+                            <td class='delete-button' t-att-data-cid='line.cid'> <i class='fa fa-times-circle' /> </td>
+                        </tr>
+                    </t>
+                    <t t-if='!line.selected'>
+                        <tr class='paymentline' t-att-data-cid='line.cid'>
+                            <td class='col-due'> <t t-esc='widget.format_currency_no_symbol(order.get_due(line))' /> </td>
+                            <td class='col-tendered'> <t t-esc='widget.format_currency_no_symbol(line.get_amount())' /> </td>
+                            <td class='col-change'>
+                                <t t-if='order.get_change(line)'>
+                                    <t t-esc='widget.format_currency_no_symbol(order.get_change(line))' />
+                                 </t>
+                            </td>
+                            <td class='col-name'> <t t-esc='line.name' /> </td>
+                            <td class='delete-button' t-att-data-cid='line.cid'> <i class='fa fa-times-circle' /> </td>
+                        </tr>
+                    </t>
+                </t>
+                <t t-if="line.cashregister.journal.is_iqcn_journal">
+                    <t t-if='line.selected'>
+                        <tr class='paymentline selected'>
+                            <td class='col-due'> <t t-esc='widget.format_currency_no_symbol(order.get_due(line))' /> </td>
+                            <td><t t-esc="line.iqcn_status_text"/></td>
+                            <td colspan="3">
+                                <t t-if="!line.iqcn_status_id">
+                                    <button class="payment-icqn-transaction-start"  t-att-data-cid='line.cid' style="float:right;"><img src="../../pos_iq_cash_now/static/src/img/logo.png" style="height:24px;"/></button>
+                                </t>
+                                <t t-if="line.iqcn_status_id==1">
+                                    <!-- Payment Done -->
+                                </t>
+                                <t t-if="line.iqcn_status_id==2">
+                                    <!-- Waiting for payment -->
+                                    <button class="payment-icqn-transaction-open"  t-att-data-cid='line.cid' style="float:right;"><img src="../../pos_iq_cash_now/static/src/img/logo.png" style="height:24px;"/></button>
+                                </t>
+                                <t t-if="line.iqcn_status_id==99">
+                                    <!-- Aborted payment -->
+                                </t>
+                            </td>
+                        </tr>
+                    </t>
+                    <t t-if='!line.selected'>
+                        <tr class='paymentline' t-att-data-cid='line.cid'>
+                            <td class='col-due'> <t t-esc='widget.format_currency_no_symbol(order.get_due(line))' /> </td>
+                            <td><t t-esc="line.iqcn_status_text"/></td>
+                            <td class='col-change' colspan="3">
+                            </td>
+                        </tr>
+                    </t>
+                </t>
+            </t>
+        </t>
+    </t>
+
+</templates>

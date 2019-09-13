@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record forcecreate="True" id="ir_cron_check_iqcn_payments" model="ir.cron">
+            <field name="name">Check IQCN Payments</field>
+            <field eval="True" name="active" />
+            <field name="user_id" ref="base.user_root" />
+            <field name="interval_number">1</field>
+            <field name="interval_type">hours</field>
+            <field name="numbercall">-1</field>
+            <field name="doal">0</field>
+            <field ref="iq_cash_now_invoice.model_account_invoice" name="model_id" />
+            <field name="code">model.check_open_iqcn_payments()</field>
+            <field name="state">code</field>
+        </record>
+
+    </data>
+</odoo>

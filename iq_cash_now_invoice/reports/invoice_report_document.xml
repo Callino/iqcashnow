@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="invoice_document_iqcn" inherit_id="account.report_invoice_document">
+            <xpath expr="//div[@id='qrcode']" position="after">
+                <div id="iqcn_qr_code" t-if="o.payment_url">
+                    <p>
+                        <strong class="text-center">Scan me with your crypto wallet app.</strong><br/><br/>
+                        <img class="border border-dark rounded" t-att-src="o.build_qr_code_url(o.payment_url)"/>
+                    </p>
+                </div>
+            </xpath>
+        </template>
+
+    </data>
+</odoo>
