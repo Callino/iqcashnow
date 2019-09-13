@@ -17,7 +17,7 @@ Does service as base module for the modules which does integrate IQCashnow for
     'version': '12.0.1.0.0',
     'author': "Callino",
     'maintainer': 'Callino',
-    'website': 'https://www.callino.at/page/IQ-Cashnow',
+    'website': 'https://github.com/Callino/iqcashnow',
     'license': 'AGPL-3',
     'category': 'Payment',
     'depends': [
