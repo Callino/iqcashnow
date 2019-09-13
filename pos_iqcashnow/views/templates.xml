@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="rksv_assets" inherit_id="point_of_sale.assets">
+          <xpath expr="." position="inside">
+              <script type="text/javascript" src="/pos_iqcashnow/static/src/lib/CryptoJS/rollups/sha256.js"></script>
+              <script type="text/javascript" src="/pos_iqcashnow/static/src/lib/CryptoJS/rollups/hmac-sha512.js"></script>
+              <script type="text/javascript" src="/pos_iqcashnow/static/src/lib/jquery.qrcode.min.js"></script>
+              <script type="text/javascript" src="/pos_iqcashnow/static/src/js/pos.js"></script>
+              <link rel="stylesheet" type="text/css" href="/pos_iqcashnow/static/src/css/iqcn.css"/>
+          </xpath>
+        </template>
+
+    </data>
+</odoo>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="account_journal_iq_cash_now" model="ir.ui.view">
+        <field name="name">Account Journal: IQ Cashnow</field>
+        <field name="model">account.journal</field>
+        <field name="inherit_id" ref="account.view_account_journal_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='type']" position="after">
+                <field name="is_iqcn_journal"/>
+            </xpath>
+            <xpath expr='//notebook' position='inside'>
+                <page name="iqcashnow" string="IQ Cashnow" attrs="{'invisible': [('is_iqcn_journal', '=', False)]}">
+                    <h2 attrs="{'invisible': [('iqcn_key', '>', '')]}">Please visit <a href="https://www.iqcashnow.com/?post_type=product" target="iqcashnow">IQ Cashnow</a> to get your credentials !</h2>
+                    <button type="object" name="test_iqcn_connection" string="Test IQCN Credentials" attrs="{'invisible': ['|', ('iqcn_key', '=', ''), ('iqcn_secret', '=', '')]}"/>
+                    <group>
+                        <field name="iqcn_connection_confirmed" readonly="1"/>
+                        <field name="iqcn_host" attrs="{'required': [('is_iqcn_journal', '!=', False)]}" groups="base.group_no_one"/>
+                        <field name="iqcn_key" attrs="{'required': [('is_iqcn_journal', '!=', False)]}"/>
+                        <field name="iqcn_secret" attrs="{'required': [('is_iqcn_journal', '!=', False)]}" password="1"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

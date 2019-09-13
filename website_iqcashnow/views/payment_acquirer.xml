@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="payment_acquirer_iq_cash_now" model="ir.ui.view">
+        <field name="name">Payment Aquirer: IQ Cashnow</field>
+        <field name="model">payment.acquirer</field>
+        <field name="inherit_id" ref="payment.acquirer_form"/>
+        <field name="arch" type="xml">
+            <xpath expr='//group[@name="acquirer"]' position='after'>
+                <group attrs="{'invisible': [('provider', '!=', 'iqcn')]}">
+                    <field name="iqcn_host"/>
+                    <field name="iqcn_key"/>
+                    <field name="iqcn_secret"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
