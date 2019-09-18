@@ -1,6 +1,6 @@
 # coding: utf-8
 from odoo import api, fields, models, _
-from ..iq_cash_now.iq_cash_now import api
+from ..iqcashnow.iqcashnow import api
 
 
 class IQCashNowPaymentAcquirer(models.Model):

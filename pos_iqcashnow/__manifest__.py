@@ -1,23 +1,21 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'POS IQ Cashnow Integration',
-    'version': '12.0.0.1',
+    'version': '12.0.1.0',
     'category': 'Point of Sale',
-    'sequence': 6,
     'summary': 'POS IQ Cashnow Integration',
-    'website': 'https://github.com/Odoo-Austria',
-    'author': 'Wolfgang Pichler (Callino), Gerhard Baumgartner (Callino), WT-IO-IT GmbH, Wolfgang Taferner',
-    'license': "Other proprietary",
+    'website': 'https://github.com/Callino/iqcashnow',
+    'author': 'Wolfgang Pichler (Callino), Gerhard Baumgartner (Callino)',
+    'license': 'AGPL-3',
     'description': """
 POS IQ Cashnow Integration
 =============================
-
+Customer can pay using crypto currency on your pos
 """,
     'depends': ['point_of_sale', 'payment_iqcashnow'],
     'test': [
     ],
     'data': [
-        'security/ir.model.access.csv',
         'views/templates.xml',
         'views/pos_order.xml',
         'views/pos_config.xml',

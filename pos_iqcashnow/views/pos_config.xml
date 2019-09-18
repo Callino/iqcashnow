@@ -14,7 +14,7 @@
                         <div class="o_setting_right_pane">
                             <label for="auto_icqn_payment"/>
                             <div class="text-muted">
-                                Automatically start IQCashNow Payment when payment method is choosen
+                                Automatically start IQCashnow Payment when payment method is choosen
                             </div>
                         </div>
                     </div>

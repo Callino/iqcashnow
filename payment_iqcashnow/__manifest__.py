@@ -15,8 +15,9 @@ Does service as base module for the modules which does integrate IQCashnow for
 * Invoicing
     """,
     'version': '12.0.1.0.0',
-    'author': "Callino",
+    'author': 'Wolfgang Pichler (Callino), Gerhard Baumgartner (Callino)',
     'maintainer': 'Callino',
+    'development_status': 'stable',
     'website': 'https://github.com/Callino/iqcashnow',
     'license': 'AGPL-3',
     'category': 'Payment',
