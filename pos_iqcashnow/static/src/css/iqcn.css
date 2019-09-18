@@ -45,3 +45,35 @@
     height:300px;
     padding-top:40px;
 }
+
+.iqcn-qr-selcet-currency-widget {
+    text-align: center;
+    background: #fff;
+    margin: auto;
+    position:relative;
+    transform: translate(0%, 10%);
+    width: 400px;
+    padding-top:40px;
+    padding-bottom:40px;
+}
+
+div.crypto-select {
+    border: 1px solid black;
+    margin: 30px;
+    height: 50px;
+    padding: 5px;
+    font-size: x-large;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+div.crypto-select:hover {
+    background: #2579be;
+    color: #fff;
+}
+
+div.crypto-select img{
+    height: 50px;
+    float: left;
+    clear: both;
+}

@@ -42,7 +42,17 @@ odoo.define('pos_iq_cash_now.pos', function (require) {
             });
         },
 
-        iqcn_payment_start: function (line) {
+        iqcn_payment_select_currency: function (line) {
+            var self = this;
+            this.pos.gui.popup_instances.iqcn_select_currency.show({payment_line: line});
+        },
+
+        iqcn_payment_currency_selected: function (line, currency) {
+            var self = this;
+            this.pos.iqcn.iqcn_payment_start(line, currency);
+        },
+
+        iqcn_payment_start: function (line, crypto_currency) {
             var self = this;
             var transaction_amount = line.get_iqcn_transaction_amount();
             if (transaction_amount <= 0) {
@@ -56,6 +66,7 @@ odoo.define('pos_iq_cash_now.pos', function (require) {
             form_data.append("currency", self.pos.currency.name);
             form_data.append("price", transaction_amount.toString());
             form_data.append("ref", line.order.name);
+            form_data.append("crypto_currency", crypto_currency ? crypto_currency : "BTC");
             form_data.append("sandbox", "0");
             $.ajax({
                 url: line.cashregister.journal.iqcn_host + "/v2/?a=createPayment",
@@ -222,7 +233,7 @@ odoo.define('pos_iq_cash_now.pos', function (require) {
                 var line_cid = $(this).data('cid');
                 var order = self.pos.get_order();
                 var line = order.paymentlines._byId[line_cid];
-                self.pos.iqcn.iqcn_payment_start(line);
+                self.pos.iqcn.iqcn_payment_select_currency(line);
             }).on('click', '.payment-icqn-transaction-open', function (event) {
                 var line_cid = $(this).data('cid');
                 var order = self.pos.get_order();
@@ -282,7 +293,7 @@ odoo.define('pos_iq_cash_now.pos', function (require) {
                 this.pos.gui.screen_instances.payment.render_paymentlines();
                 // Check if auto transaction is enabled - if so - then start it here
                 if (this.pos.config.auto_icqn_payment) {
-                    this.pos.iqcn.iqcn_payment_start(this.selected_paymentline);
+                    this.pos.iqcn.iqcn_payment_select_currency(this.selected_paymentline);
                 }
             }
         }
@@ -424,5 +435,43 @@ odoo.define('pos_iq_cash_now.pos', function (require) {
         },
     });
     gui.define_popup({name: 'iqcn_idle', widget: IQCN_IdleWidget});
+
+    var IQCN_SelectCurrencyWidget = chrome.StatusWidget.extend({
+        template: 'IQCN_SelectCurrencyWidget',
+        init: function (pos, options) {
+            this._super(pos, options);
+        },
+        installEventHandler: function () {
+            var self = this;
+            this.$('.crypto-select').off();
+            this.$('.crypto-select').on('click', this.pos, function (event) {
+                self.currency_selected(event.currentTarget.getAttribute('code'))
+            });
+            this.$('#iqcn_currency_select_abort').off();
+            this.$('#iqcn_currency_select_abort').on('click', this.pos, function (event) {
+                self.abort()
+            });
+        },
+        show: function (show_options) {
+            this._super(show_options);
+            this.payment_line = show_options['payment_line'];
+            this.installEventHandler();
+        },
+        hide: function () {
+            if (this.$el) {
+                this.$el.addClass('oe_hidden');
+            }
+        },
+        abort: function() {
+            this.pos.iqcn.iqcn_payment_abort(this.payment_line);
+            this.payment_line = null;
+            this.hide();
+        },
+        currency_selected: function(currency) {
+            this.pos.iqcn.iqcn_payment_currency_selected(this.payment_line, currency);
+            this.hide();
+        }
+    });
+    gui.define_popup({name: 'iqcn_select_currency', widget: IQCN_SelectCurrencyWidget});
 
 });

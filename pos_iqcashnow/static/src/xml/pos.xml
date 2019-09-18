@@ -4,7 +4,7 @@
     <t t-name="IQCN_IdleWidget">
         <div class="pos modal-dialog popup" style="text-align: -webkit-center; margin: 0 auto;">
             <div class="iqcn-qr-idle-widget">
-                <img src="../../pos_iq_cash_now/static/src/img/logo.png"/>
+                <img src="../../pos_iqcashnow/static/src/img/logo.png"/>
                 <h1>Initializing transaction.</h1>
                 <h2>Please wait, soon you will get the QRCode !</h2>
                 <i class="fa fa-spinner fa-spin" style="font-size:3em;"/>
@@ -12,10 +12,44 @@
         </div>
     </t>
 
+    <t t-name="IQCN_SelectCurrencyWidget">
+        <div class="pos modal-dialog popup" style="text-align: -webkit-center; margin: 0 auto;">
+            <div class="iqcn-qr-selcet-currency-widget">
+                <img src="../../pos_iqcashnow/static/src/img/logo.png"/>
+                <h1>Select Cryptocurrency</h1>
+                <div class="crypto-select" id="crypto-bitcoin" code="BTC">
+                    <img src="../../payment_iqcashnow/static/img/bitcoin.png"/>
+                    <span>Bitcoin</span>
+                </div>
+                <div class="crypto-select" id="crypto-bitcoin_cash" code="BCH">
+                    <img src="../../payment_iqcashnow/static/img/bitcoin-cash.png"/>
+                    <span>Bitcoin Cash</span>
+                </div>
+                <div class="crypto-select" id="crypto-dash" code="DASH">
+                    <img src="../../payment_iqcashnow/static/img/dash.png"/>
+                    <span>Dash</span>
+                </div>
+                <div class="crypto-select" id="crypto-ethereum" code="ETH">
+                    <img src="../../payment_iqcashnow/static/img/ethereum.png"/>
+                    <span>Ethereum</span>
+                </div>
+                <div class="crypto-select" id="crypto-litecoin" code="LTC">
+                    <img src="../../payment_iqcashnow/static/img/litecoin.png"/>
+                    <span>Litecoin</span>
+                </div>
+                <div class="crypto-select" id="crypto-monero" code="XMR">
+                    <img src="../../payment_iqcashnow/static/img/monero.png"/>
+                    <span>Monero</span>
+                </div>
+                <button id="iqcn_currency_select_abort" class="button highlight iqcn-button">Abort</button>
+            </div>
+        </div>
+    </t>
+
     <t t-name="IQCN_QRCodeWidget">
         <div class="pos modal-dialog popup iqcn-qr-modal">
             <div class="iqcn-qr-code-widget">
-                <img src="../../pos_iq_cash_now/static/src/img/logo.png"/>
+                <img src="../../pos_iqcashnow/static/src/img/logo.png"/>
                 <div class="iqcn-qr-code-container" id="qrcode">
 
                 </div>
@@ -72,14 +106,14 @@
                             <td><t t-esc="line.iqcn_status_text"/></td>
                             <td colspan="3">
                                 <t t-if="!line.iqcn_status_id">
-                                    <button class="payment-icqn-transaction-start"  t-att-data-cid='line.cid' style="float:right;"><img src="../../pos_iq_cash_now/static/src/img/logo.png" style="height:24px;"/></button>
+                                    <button class="payment-icqn-transaction-start"  t-att-data-cid='line.cid' style="float:right;"><img src="../../pos_iqcashnow/static/src/img/logo.png" style="height:24px;"/></button>
                                 </t>
                                 <t t-if="line.iqcn_status_id==1">
                                     <!-- Payment Done -->
                                 </t>
                                 <t t-if="line.iqcn_status_id==2">
                                     <!-- Waiting for payment -->
-                                    <button class="payment-icqn-transaction-open"  t-att-data-cid='line.cid' style="float:right;"><img src="../../pos_iq_cash_now/static/src/img/logo.png" style="height:24px;"/></button>
+                                    <button class="payment-icqn-transaction-open"  t-att-data-cid='line.cid' style="float:right;"><img src="../../pos_iqcashnow/static/src/img/logo.png" style="height:24px;"/></button>
                                 </t>
                                 <t t-if="line.iqcn_status_id==99">
                                     <!-- Aborted payment -->
