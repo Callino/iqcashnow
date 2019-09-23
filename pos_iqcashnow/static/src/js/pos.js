@@ -66,7 +66,7 @@ odoo.define('pos_iq_cash_now.pos', function (require) {
             form_data.append("currency", self.pos.currency.name);
             form_data.append("price", transaction_amount.toString());
             form_data.append("ref", line.order.name);
-            form_data.append("crypto_currency", crypto_currency ? crypto_currency : "BTC");
+            form_data.append("target_currency", crypto_currency ? crypto_currency : "BTC");
             form_data.append("sandbox", "0");
             $.ajax({
                 url: line.cashregister.journal.iqcn_host + "/v2/?a=createPayment",

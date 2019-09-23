@@ -21,15 +21,15 @@
                     <img src="../../payment_iqcashnow/static/img/bitcoin.png"/>
                     <span>Bitcoin</span>
                 </div>
-                <div class="crypto-select" id="crypto-bitcoin_cash" code="BCH">
+                <!--<div class="crypto-select" id="crypto-bitcoin_cash" code="BCH">
                     <img src="../../payment_iqcashnow/static/img/bitcoin-cash.png"/>
                     <span>Bitcoin Cash</span>
-                </div>
+                </div>-->
                 <div class="crypto-select" id="crypto-dash" code="DASH">
                     <img src="../../payment_iqcashnow/static/img/dash.png"/>
                     <span>Dash</span>
                 </div>
-                <div class="crypto-select" id="crypto-ethereum" code="ETH">
+                <!--<div class="crypto-select" id="crypto-ethereum" code="ETH">
                     <img src="../../payment_iqcashnow/static/img/ethereum.png"/>
                     <span>Ethereum</span>
                 </div>
@@ -40,7 +40,7 @@
                 <div class="crypto-select" id="crypto-monero" code="XMR">
                     <img src="../../payment_iqcashnow/static/img/monero.png"/>
                     <span>Monero</span>
-                </div>
+                </div>-->
                 <button id="iqcn_currency_select_abort" class="button highlight iqcn-button">Abort</button>
             </div>
         </div>
