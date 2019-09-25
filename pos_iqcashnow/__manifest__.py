@@ -9,8 +9,10 @@
     'license': 'AGPL-3',
     'description': """
 POS IQ Cashnow Integration
-=============================
+==========================
 Customer can pay using crypto currency on your pos
+At time Bitcoin and Dash are supported.
+More to come like Bitcoin Cash, Ethereum, Litecoin, Monero
 """,
     'depends': ['point_of_sale', 'payment_iqcashnow'],
     'test': [

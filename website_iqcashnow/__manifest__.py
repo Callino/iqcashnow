@@ -10,8 +10,10 @@
     'license': 'AGPL-3',
     'description': """
 Webshop IQ Cashnow Integration
-=============================
+==============================
 Accept crypto currency payments in your webshop
+Does currently support bitcoin payments.
+Dash will follow in the next weeks.
 """,
     'depends': ['website_sale', 'payment_iqcashnow'],
     'test': [

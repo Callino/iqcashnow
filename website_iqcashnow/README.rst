@@ -31,7 +31,6 @@ You even won't need a wallet for this, just a normal bank account for the out pa
 
 With IQCashnow you can accept the following crytpo currencies in your webshop (more to come):
  * Bitcoin
- * Dash
 
 
 **Table of contents**

@@ -12,7 +12,10 @@ IQ Cashnow
 Does service as base module for the modules which does integrate IQCashnow for
 * ECommerce
 * POS
-* Invoicing
+* Invoicing (in the next weeks)
+
+At time Bitcoin and Dash are supported.
+More to come like Bitcoin Cash, Ethereum, Litecoin, Monero
     """,
     'version': '12.0.1.0.0',
     'author': 'Wolfgang Pichler (Callino), Gerhard Baumgartner (Callino)',
