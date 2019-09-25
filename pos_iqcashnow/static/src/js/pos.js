@@ -106,7 +106,7 @@ odoo.define('pos_iq_cash_now.pos', function (require) {
                 function failed(result) {
                     self.pos.gui.popup_instances.iqcn_idle.hide();
                     line.iqcn_transaction = false;
-                    order.remove_paymentline(line);
+                    line.order.remove_paymentline(line);
                     self.pos.gui.show_popup('error', {
                         'title': _t('Error'),
                         'body': _t('Failed to initialize transaction.'),

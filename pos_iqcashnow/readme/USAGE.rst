@@ -8,3 +8,5 @@ To configure this module, you need to:
    :alt: Odoo Journal configuration
    :width: 80 %
    :align: center
+
+* Go to Point of Sale -> Configuration -> Point of Sale - Open the pos config where you want ot add support for crypto payments. Do add the IQ Cashnow payment method to the list of supported payment methods.
