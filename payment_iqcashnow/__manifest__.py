@@ -25,10 +25,8 @@ Does service as base module for the modules which does integrate IQCashnow for
         'account', 'payment'
     ],
     'data': [
-        'data/payment_acquirer.xml',
         'data/account_journal.xml',
         'views/account_journal.xml',
-        'views/payment_acquirer.xml',
     ],
     "external_dependencies": {
 
