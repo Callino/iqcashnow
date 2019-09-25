@@ -1,12 +1,26 @@
-To configure this module, you need to:
+How to use this module
 
-* Register within https://www.iqcashnow.com/ for an account. You will receive a key / secret pair
+* In your POS session you will have the payment method IQ Cashnow
 
-* Go to Invoicing > Configuration > Journals - there is a new journal called "IQ Cashnow". Do configure this journal with your credentials from the first step.
-
-.. figure:: https://raw.githubusercontent.com/Callino/iqcashnow/12.0/payment_iqcashnow/static/screenshots/account_journal.png
-   :alt: Odoo Journal configuration
+.. figure:: https://raw.githubusercontent.com/Callino/iqcashnow/12.0/pos_iqcashnow/static/screenshots/payment_screen.png
+   :alt: POS Payment screen
    :width: 80 %
    :align: center
 
-* Go to Point of Sale -> Configuration -> Point of Sale - Open the pos config where you want ot add support for crypto payments. Do add the IQ Cashnow payment method to the list of supported payment methods.
+* You can choose which target currency to use for the payment
+
+.. figure:: https://raw.githubusercontent.com/Callino/iqcashnow/12.0/pos_iqcashnow/static/screenshots/select_currency.png
+   :alt: POS Payment screen
+   :width: 80 %
+   :align: center
+
+* After a short delay (depends on crypto network) you will get the qrcode for payment on the cashier display - and also on the customer display if connected
+
+.. figure:: https://raw.githubusercontent.com/Callino/iqcashnow/12.0/pos_iqcashnow/static/screenshots/pay_with_qrcode.png
+   :alt: POS Payment screen
+   :width: 80 %
+   :align: center
+
+* The payment screen will keep open until the customer did the payment, or the cashier did abort the payment
+
+* On successful customer payment - the order will get confirmed automatically
