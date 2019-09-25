@@ -1,0 +1,24 @@
+input[type=checkbox].iqcashnow-checkbox{ display: none; }
+
+.iqcashnow-label {
+    padding-left: 20px;
+    display: flex;
+    width: 50%;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-color: #E9EEF4;
+    background-size: contain;
+}
+
+.iqcashnow-label-bitcoin {
+    background-image: url(/website_iqcashnow/static/img/bitcoin.png);
+}
+
+.iqcashnow-label-dash {
+    background-image: url(/website_iqcashnow/static/img/dash.png);
+}
+
+input[type=checkbox].iqcashnow-checkbox:checked + label.iqcashnow-label {
+ background-position: 0 0;
+ border: 3px solid #2FBCDF;
+}

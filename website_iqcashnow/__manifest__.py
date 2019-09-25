@@ -19,6 +19,7 @@ Accept crypto currency payments in your webshop
     'data': [
         'views/payment_iqcn_templates.xml',
         'views/payment_acquirer.xml',
+        'views/assets.xml',
         'data/payment_acquirer.xml',
     ],
     'installable': True,

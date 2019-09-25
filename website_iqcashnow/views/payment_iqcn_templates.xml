@@ -2,17 +2,34 @@
 <odoo>
     <data>
 
+        <template id="payment_tokens_list_iqcashnow" inherit_id="payment.payment_tokens_list" name="Payment Tokens list IQCashnow">
+            <xpath expr="//div[hasclass('card-body')]" position="inside">
+                <t t-if="acq.provider=='iqcn'">
+                    <div class="row">
+                        <div class="col-6">
+                            <input id="iqcashnow_bitcoin" type="checkbox" class="iqcashnow-checkbox iqcashnow-checkbox-bitcoin" data-currency="bitcoin">
+                                <label for="iqcashnow_bitcoin" class="iqcashnow-label iqcashnow-label-bitcoin"></label>
+                            </input>
+                        </div>
+                        <div class="col-6">
+                            <input id="iqcashnow_dash" type="checkbox" class="iqcashnow-checkbox iqcashnow-checkbox-dash" data-currency="dash">
+                                <label for="iqcashnow_dash" class="iqcashnow-label iqcashnow-label-dash"></label>
+                            </input>
+                        </div>
+                    </div>
+                </t>
+            </xpath>
+        </template>
+
         <template id="iqcn_form">
-            <div>
+            <div t-attf-class="row mt8 #{'' if bootstrap_formatting else 'o_card_brand_detail'}">
                 <input type="hidden" name="data_set" t-att-data-action-url="tx_url" data-remove-me=""/>
                 <t t-if="return_url">
                     <input type="hidden" name='return_url' t-att-value='return_url'/>
                 </t>
                 <input type="hidden" name='reference' t-att-value='reference'/>
-                <input type="hidden" name='qrcode_url' t-att-value='qrcode'/>
                 <input type="hidden" name='amount' t-att-value='amount'/>
                 <input type="hidden" name='currency' t-att-value='currency.name'/>
-                <image t-att-src="qrcode" name="qrcode"/>
             </div>
         </template>
 

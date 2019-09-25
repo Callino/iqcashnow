@@ -7,15 +7,17 @@
             <field name="image" type="base64" file="website_iqcashnow/static/img/bitcoin.png"/>
         </record>
 
+        <record id="payment_icon_crypto_dash" model="payment.icon">
+            <field name="name">Dash</field>
+            <field name="image" type="base64" file="website_iqcashnow/static/img/dash.png"/>
+        </record>
+
+        <!--
         <record id="payment_icon_crypto_bitcoin_cash" model="payment.icon">
             <field name="name">Bitcoin cash</field>
             <field name="image" type="base64" file="website_iqcashnow/static/img/bitcoin-cash.png"/>
         </record>
 
-        <record id="payment_icon_crypto_dash" model="payment.icon">
-            <field name="name">Dash</field>
-            <field name="image" type="base64" file="website_iqcashnow/static/img/dash.png"/>
-        </record>
 
         <record id="payment_icon_crypto_ethereum" model="payment.icon">
             <field name="name">Ethereum</field>
@@ -31,12 +33,14 @@
             <field name="name">Monero</field>
             <field name="image" type="base64" file="website_iqcashnow/static/img/monero.png"/>
         </record>
+        -->
 
         <record id="acquirer_iqcashnow" model="payment.acquirer">
             <field name="name">IQ Cashnow</field>
             <field name="provider">iqcn</field>
             <field name="image" type="base64" file="website_iqcashnow/static/description/icon.png"/>
             <field name="view_template_id" ref="iqcn_form"/>
+            <field name="payment_flow">form</field>
             <field name="module_id" ref="base.module_website_iqcashnow"/>
             <field name="description" type="html">
                 <p>
@@ -51,10 +55,6 @@
                 </ul>
             </field>
             <field name="payment_icon_ids" eval='[(6, 0, [ref("payment_icon_crypto_bitcoin"),
-                                                            ref("payment_icon_crypto_bitcoin_cash"),
-                                                            ref("payment_icon_crypto_ethereum"),
-                                                            ref("payment_icon_crypto_litecoin"),
-                                                            ref("payment_icon_crypto_monero"),
                                                             ref("payment_icon_crypto_dash")])]'/>
 
         </record>
