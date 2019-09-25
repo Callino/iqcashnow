@@ -14,7 +14,7 @@ class IQCashNowJournal(models.Model):
 
     is_iqcn_journal = fields.Boolean(string="IQ Cashnow Journal", default=False)
     iqcn_connection_confirmed = fields.Boolean(string="Connection", default=False)
-    iqcn_host = fields.Char(string="Host", default="https://api.iqcashnow.com/")
+    iqcn_host = fields.Char(string="Host", default="https://lb.iqcashnow.com/")
     iqcn_key = fields.Char(string="Key")
     iqcn_secret = fields.Char(string="Secret")
 

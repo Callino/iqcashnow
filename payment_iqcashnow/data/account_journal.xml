@@ -6,7 +6,7 @@
             <field name="name">IQ Cashnow</field>
             <field name="code">IQCN</field>
             <field name="is_iqcn_journal" eval="True"/>
-            <field name="iqcn_payment_acquirer_id" ref="acquirer_iqcashnow"/>
+            <field name="iqcn_host">https://lb.iqcashnow.com/</field>
             <field name="type">bank</field>
         </record>
 
