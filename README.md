@@ -8,6 +8,8 @@ Following modules are available
 - payment_iqcashnow (Base module)
 - pos_iqcashnow (POS integration for crypto currency)
 - website_iqcashnow (E-Commerce integration, offer crypto currency payments for your customers)
+
+Following modules will be available in the next time
 - invoice_iqcashnow (Your invoices can get paid using crypto currency)
 
 IQCashnow takes over the entire process handling, and is available in the SEPA region.
@@ -20,8 +22,4 @@ You even won't need a wallet for this, just a normal bank account for the out pa
 
 With IQCashnow you can accept (more to come):
  * Bitcoin
- * Bitcoin Cash
- * Litecoin
- * Ethereum
  * Dash
- * Monero

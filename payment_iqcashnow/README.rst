@@ -7,17 +7,14 @@ IQ Cashnow Payment
    !! changes will be overwritten.                   !!
    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-.. |badge1| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
-    :target: https://odoo-community.org/page/development-status
-    :alt: Beta
-.. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
+.. |badge1| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
-.. |badge3| image:: https://img.shields.io/badge/github-Callino%2Fiqcashnow-lightgray.png?logo=github
+.. |badge2| image:: https://img.shields.io/badge/github-Callino%2Fiqcashnow-lightgray.png?logo=github
     :target: https://github.com/Callino/iqcashnow/tree/12.0/payment_iqcashnow
     :alt: Callino/iqcashnow
 
-|badge1| |badge2| |badge3| 
+|badge1| |badge2| 
 
 This is a technical base module which does provide the basic functions and data for the IQ Cashnow Modules
 
@@ -25,7 +22,7 @@ The following modules does depend on this module
 
 - pos_iqcashnow (POS integration for crypto currency)
 - website_iqcashnow (E-Commerce integration, offer crypto currency payments for your customers)
-- invoice_iqcashnow (Your invoices can get paid using crypto currency)
+- invoice_iqcashnow (Your invoices can get paid using crypto currency) <- Will arrive soon
 
 IQCashnow takes over the entire process handling, and is available in the SEPA region.
 
@@ -37,11 +34,7 @@ You even won't need a wallet for this, just a normal bank account for the out pa
 
 With IQCashnow you can accept (more to come):
  * Bitcoin
- * Bitcoin Cash
- * Litecoin
- * Ethereum
  * Dash
- * Monero
 
 **Table of contents**
 
@@ -86,12 +79,8 @@ Credits
 Authors
 ~~~~~~~
 
-* Callino
-
-Contributors
-~~~~~~~~~~~~
-
-
+* Wolfgang Pichler (Callino)
+* Gerhard Baumgartner (Callino)
 
 Maintainers
 ~~~~~~~~~~~
