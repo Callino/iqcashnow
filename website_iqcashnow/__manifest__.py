@@ -21,6 +21,7 @@ Accept crypto currency payments in your webshop
         'views/payment_acquirer.xml',
         'data/payment_acquirer.xml',
     ],
+    'images': ['static/description/banner.gif'],
     'installable': True,
     'auto_install': False,
 }

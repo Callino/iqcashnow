@@ -21,6 +21,7 @@ Customer can pay using crypto currency on your pos
         'views/pos_config.xml',
     ],
     'qweb': ['static/src/xml/pos.xml'],
+    'images': ['static/description/banner.gif'],
     'application': False,
     'installable': True,
     'auto_install': True,

@@ -31,6 +31,7 @@ Does service as base module for the modules which does integrate IQCashnow for
     "external_dependencies": {
 
     },
+    'images': ['static/description/banner.gif'],
     'installable': True,
     'license': 'AGPL-3',
 }
